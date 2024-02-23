@@ -1,0 +1,132 @@
+.background {
+  background-color: rgba(132, 70, 190, 0.283);
+  z-index: 10;
+}
+
+.greeting {
+  margin: 1em;
+  text-align: center;
+  border: 3px solid rgb(251, 250, 249);
+  border-radius: 10px;
+  z-index: 11;
+  background-color: rgb(251, 250, 249);
+  padding-bottom: 20px;
+}
+.greeting .title {
+  border-bottom: solid 3px #ffc778;
+  font-family: "Noto Serif JP", sans-serif, Arial, Helvetica;
+}
+
+.mainQuestion {
+  border: 2px solid rgb(251, 250, 249);
+  border-radius: 10px;
+  margin: 1em;
+  padding: 1em 2em 1em 3em;
+  background-color: rgb(251, 250, 249);
+}
+
+.entryForm {
+  background-color: rgb(251, 250, 249);
+  border-radius: 10px;
+  padding: 0.6em 1.2em 1em 1.2em;
+  margin: 1em;
+}
+.entryForm .inputForm {
+  border-bottom: solid 3px #ffc778;
+}
+
+.form {
+  padding: 1em;
+}
+
+.freeForm {
+  background-color: rgb(255, 255, 255);
+  width: 60em;
+  height: 8em;
+  border: 1px solid rgb(55, 53, 53);
+  border-radius: 10px;
+}
+
+.userInfo {
+  border: 2px solid rgb(251, 250, 249);
+  border-radius: 10px;
+  margin: 1em;
+  padding: 1em 2em 1em 3em;
+  background-color: rgb(251, 250, 249);
+}
+.userInfo .userTellNumber {
+  margin-top: 1em;
+}
+
+.purpose {
+  border: 2px solid rgb(251, 250, 249);
+  border-radius: 10px;
+  margin: 1em;
+  padding: 0.3em 2em 1em 4em;
+  background-color: rgb(251, 250, 249);
+}
+.purpose .mentenanceTitle {
+  border-bottom: solid 3px #ffc778;
+}
+
+.nextButton {
+  text-align: center;
+  margin: 4em;
+}
+
+.nextbody {
+  height: 60em;
+}
+
+.nextForm {
+  width: 20em;
+  border: 2px solid rgb(251, 250, 249);
+  border-radius: 10px;
+  margin-top: 8em;
+  padding: 1em 2em 1em 3em;
+  background-color: rgb(251, 250, 249);
+}
+
+.nextPageTitle {
+  font-size: 2em;
+  border-bottom: solid 3px #ffc778;
+}
+
+.shopCode {
+  margin-top: 1em;
+  font-size: large;
+}
+
+.shopName {
+  margin-top: 1em;
+  font-size: large;
+}
+
+.customorAssistant {
+  margin-top: 1em;
+  font-size: large;
+}
+
+.sendDateButton {
+  margin-top: 3em;
+  text-align: center;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  z-index: 2;
+  width: 40%;
+  padding: 1em;
+  background: #fff;
+}/*# sourceMappingURL=CssModules.module.css.map */
