@@ -7,14 +7,10 @@ import classes from "../CssModules.module.scss";
 //nullならデフォルト、trueならUserInfoを返す？タイプ
 
 const Userinfos = () => {
-  
-  const { userInfo, setUserInfo} = useUserInfoContext();
-
-
+  const { userInfo, setUserInfo } = useUserInfoContext();
 
   //入ってきたイベントのidがuserNameならUserinfoのuserNameの値を変える。それ以外ならUserinfoのtellNumberを変える。
   const handleChangeInfo = (e: React.ChangeEvent<HTMLInputElement>) => {
-   
     const inputID = e.currentTarget.id;
     const selectedValue = e.currentTarget.value;
 
@@ -26,30 +22,23 @@ const Userinfos = () => {
     }));
   };
 
-  console.log(userInfo)
   return (
     <>
-      <div>
-        お名前:
-        </div>
-        <input
-          type="text"
-          id="userName"
-          value={userInfo.userName}
-          onChange={(e) => handleChangeInfo(e)}
-        />
-      
+      <div>お名前:</div>
+      <input
+        type="text"
+        id="userName"
+        value={userInfo.userName}
+        onChange={(e) => handleChangeInfo(e)}
+      />
 
-      <div className={classes.userTellNumber}>
-        電話番号:
-        </div>
-        <input
-          type="text"
-          id="tellNumber"
-          value={userInfo.tellNumber}
-          onChange={(e) => handleChangeInfo(e)}
-        />
-      
+      <div className={classes.userTellNumber}>電話番号:</div>
+      <input
+        type="text"
+        id="tellNumber"
+        value={userInfo.tellNumber}
+        onChange={(e) => handleChangeInfo(e)}
+      />
     </>
   );
 };

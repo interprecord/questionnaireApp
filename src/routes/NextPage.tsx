@@ -2,7 +2,7 @@ import { exitCode } from "process";
 import React, { ReactNode, useEffect, useState } from "react";
 import classes from "../CssModules.module.scss";
 
-import { addDoc, collection} from "firebase/firestore";
+import { addDoc, collection } from "firebase/firestore";
 import {
   useAnswerContext,
   useEntryContext,
@@ -10,11 +10,13 @@ import {
   useShopInfoContext,
   useUserInfoContext,
 } from "../context/Context";
-import db from "../firebase/firebaseConfig";
+import db from "../firebase/firebase";
 import Modal from "../component/Modal";
+import { Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 const NextPageForm = () => {
-  const [show,setShow] =useState(false);
+  const [show, setShow] = useState(false);
 
   const { answers, setAnswers } = useAnswerContext();
   const { shopInfo, setShopInfo } = useShopInfoContext();
@@ -22,7 +24,7 @@ const NextPageForm = () => {
 
   const { userInfo, setUserInfo } = useUserInfoContext();
   const { review, setReview } = useEntryContext();
-
+  const navigate = useNavigate();
   //入ってきたイベントのidがuserNameならUserinfoのuserNameの値を変える。それ以外ならUserinfoのtellNumberを変える。
   const getShopInfo = (e: React.ChangeEvent<HTMLInputElement>) => {
     const inputID = e.currentTarget.id;
@@ -75,13 +77,19 @@ const NextPageForm = () => {
         <div className={classes.customorAssistant}>担当者名:</div>
         <input id="AB" onChange={(e) => getShopInfo(e)} />
         <div>
-          <Modal show={show} setShow={setShow}/>
+          <Modal show={show} setShow={setShow} />
         </div>
+        
 
         <div className={classes.sendDateButton}>
-          <button onClick={() => sendDeta()}>送信</button>
+          <Button variant="contained" color="success" onClick={() => sendDeta()}>送信</Button>
         </div>
       </div>
+      <div className={classes.toMypage} >
+      <Button variant="contained" onClick={() => navigate("/mypage")}>
+          マイページへ
+        </Button>
+        </div>
     </div>
   );
 };

@@ -6,7 +6,7 @@ type Answer = {
 };
 // type Answers = Answer[];
 // [{q1:"1"},{q2:"2"}]
-const QusetionForm = () => {
+const QuestionForm = () => {
   const { answers, setAnswers } = useAnswerContext();
 
   const handleCheck = (e: React.MouseEvent<HTMLInputElement>) => {
@@ -36,9 +36,6 @@ const QusetionForm = () => {
     setAnswers(copyAnswers);
   };
 
-  useEffect(() => {
-    console.log(answers);
-  }, [answers]);
   return (
     <div>
       <div>
@@ -267,4 +264,4 @@ const QusetionForm = () => {
   );
 };
 
-export default QusetionForm;
+export default QuestionForm;

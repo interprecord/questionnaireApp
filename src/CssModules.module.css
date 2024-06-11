@@ -1,6 +1,16 @@
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 .background {
   background-color: rgba(132, 70, 190, 0.283);
-  z-index: 10;
+  min-height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 
 .greeting {
@@ -129,4 +139,14 @@
   width: 40%;
   padding: 1em;
   background: #fff;
+}
+
+.toMypage {
+  background-color: rgb(251, 250, 249);
+  width: 20em;
+  border: 2px solid rgb(251, 250, 249);
+  border-radius: 10px;
+  margin-top: 8em;
+  padding: 1em 2em 1em 3em;
+  text-align: center;
 }/*# sourceMappingURL=CssModules.module.css.map */

@@ -1,9 +1,9 @@
-// Import the functions you need from the SDKs you need
 // 右はダメ　import { initializeApp,getFirestore } from "firebase/app";
 
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-
+import { GoogleAuthProvider } from "firebase/auth";
+import { getAuth } from "firebase/auth";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -15,15 +15,11 @@ const firebaseConfig = {
   projectId: "questionnaireapp-2462e",
   storageBucket: "questionnaireapp-2462e.appspot.com",
   messagingSenderId: "847834652863",
-  appId: "1:847834652863:web:cd72db5e49569bc2fd660a"
-  
+  appId: "1:847834652863:web:cd72db5e49569bc2fd660a",
 };
 
 // Initialize Firebase
 const firebase = initializeApp(firebaseConfig);
-const db = getFirestore(firebase)
 
+const db = getFirestore(firebase);
 export default db;
-
-
-

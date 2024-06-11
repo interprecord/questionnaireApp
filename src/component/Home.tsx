@@ -5,6 +5,7 @@ import Userinfo from "./Userinfo";
 import Purpose from "./Purpose";
 import { useNavigate } from "react-router-dom";
 import classes from "../CssModules.module.scss";
+import { Button } from "@mui/material";
 
 
 const Home = () => {
@@ -37,7 +38,7 @@ const Home = () => {
         </div>
 
         <div className={classes.nextButton}>
-          <button onClick={() => navigate("/employespage") }>次へ</button>
+          <Button variant="contained"  onClick={() => navigate("/employespage") }>次へ</Button>
         </div>
         <div />
         

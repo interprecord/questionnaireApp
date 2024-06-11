@@ -2,7 +2,7 @@ import Home from "./component/Home";
 import NextPageForm from "./routes/NextPage";
 import { Routes, Route } from "react-router-dom";
 import NoMatch from "./routes/NoMatch";
-import { ReactNode, useEffect } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import {
   AnswersProvider,
   EntryFormProvider,
@@ -10,9 +10,9 @@ import {
   ShopInfoProvider,
   UserInfoProvider,
 } from "./context/Context";
-import classes from "/Users/kokoro/dev/portfolio/questionnaire-app/src/CssModules.module.scss";
-
-
+import SignUp from "./component/SignUp";
+import Mypage from "./component/Mypage";
+import { User, getAuth, onAuthStateChanged } from "firebase/auth";
 
 type LayoutProps = {
   children: ReactNode;
@@ -23,15 +23,23 @@ const Layout = ({ children }: LayoutProps) => {
     <div style={{ display: "flex", justifyContent: "center" }}>{children}</div>
   );
 };
-
+export const auth = getAuth();
 function App() {
-  // useEffect(() => {
-  //   // AppComponentがマウントされた時にFirebase関数を呼び出す
-  //   Firebase();
-  // }, [userInfo]);
+   //ログイン情報
+   const [nowUser, setNowUser] = useState<User | null>();
+ 
+   useEffect(() => {
+    onAuthStateChanged(auth, (currentUser) => {
+      setNowUser(currentUser);
 
+      // console.log(user);
+
+
+      
+    });
+  });
   return (
-    <div >
+    <div>
       <ShopInfoProvider>
         <PurposeProvider>
           <EntryFormProvider>
@@ -40,6 +48,22 @@ function App() {
                 <Routes>
                   <Route
                     index
+                    element={
+                      <Layout>
+                        <SignUp nowUser={nowUser} setNowUser={setNowUser} />
+                      </Layout>
+                    }
+                  />
+                  <Route
+                    path="/myPage"
+                    element={
+                      <Layout>
+                        <Mypage nowUser={nowUser} setNowUser={setNowUser}  />
+                      </Layout>
+                    }
+                  />
+                  <Route
+                    path="/home"
                     element={
                       <Layout>
                         <Home />

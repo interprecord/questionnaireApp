@@ -1,0 +1,39 @@
+.mypage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  background-color: #f4f4f4;
+  min-height: 100vh;
+
+  &__title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+
+  &__username {
+    font-size: 1.5rem;
+    color: #666;
+    margin-bottom: 2rem;
+  }
+
+  &__section {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #444;
+    margin: 2rem 0 1rem;
+    padding-left: 1.5rem;
+    border-left: 4px solid #2196f3;
+  }
+
+  &__button {
+    margin: 1rem 0;
+    width: 200px;
+
+    &--logout {
+      margin-top: 30px;
+    }
+  }
+}
